@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+  <title>HTML5 Custom Video Player</title>
+</head>
+<body class="bg-indigo-950 p-10">
+  <div id="container" class="w-4/5 h-4/5 mx-auto rounded-lg overflow-hidden relative group border border-red-50">
+    <h1 class="text-3xl underline text-rose-800">Custom HTML5 Video Player</h1>
+    <video class="w-full">
+      <source src="./public/video/production_id_4200266.mp4">
+    </video>
+    <div id="controls" class="controls-container">
+      <!--Progress Bar-->
+      <div id="progress-bar" class="h-1 w-full bg-white cursor-pointer mb-4">
+        <div id="progress-indicator" class="h-full w-9 bg-indigo-800 transition-all duration-500 ease-in-out"></div>
+      </div>
+      <!--Video Controls-->
+      <div class="flex place-items-center justify-between">
+        <div class="flex items-center justify-between">
+          <button id="rewind-button" class="transition-all duration-100 ease-linear hover:scale-125"><i class="material-icons text-white text-3xl w-12">replay_10</i></button>
+          <button id="play-button" class="transition-all duration-100 ease-linear hover:scale-125"><i class="material-icons text-white text-5xl w-12">play_arrow</i></button>
+          <button id="forward-button"  class="transition-all duration-100 ease-linear hover:scale-125"><i class="material-icons text-white text-3xl w-12">forward_10</i></button>
+        </div>
+        <div>
+          <button id="volume-control"  class="transition-all duration-100 ease-linear hover:scale-125"><i class="material-icons text-white text-3xl w-12">volume_up</i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
