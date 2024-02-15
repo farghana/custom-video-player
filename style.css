@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* disabling the default browser feature, */
+@layer base {
+  video::-webkit-media-controls {
+    display: none;
+  }
+
+  video::-webkit-media-controls-play-button {
+    display: none;
+  }
+
+  video::-webkit-media-controls-volume-slider {
+    display: none;
+  }
+
+  video::-webkit-media-controls-mute-button {
+    display: none;
+  }
+
+  video::-webkit-media-controls-timeline {
+    display: none;
+  }
+
+  video::-webkit-media-controls-current-time-display {
+    display: none;
+  }
+}
+
 .controls-container{
   @apply opacity-0 p-5 absolute bottom-0 left-0 w-full transition-opacity duration-300 ease-linear group-hover:opacity-100
 }
