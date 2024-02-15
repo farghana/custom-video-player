@@ -18,3 +18,4 @@ const updatePlayPauseIcon = ()=>{
 
 
 playPauseBtn.addEventListener("click", playPauseVideo);
+video.addEventListener("click", playPauseVideo);
