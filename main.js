@@ -53,12 +53,13 @@ const progressBar = document.querySelector("#progress-bar");
 
 const setCurrentVideoTime = (e) => {
 	const getMousePosition = e.offsetX;
-  const getMousePositionTime = (getMousePosition/progressBar.offsetWidth)*video.duration;
-  //set video current time
-  video.currentTime = getMousePositionTime;
+	const getMousePositionTime =
+		(getMousePosition / progressBar.offsetWidth) * video.duration;
+	//set video current time
+	video.currentTime = getMousePositionTime;
 };
 
-//add eventlistener for seeking 
+//add eventlistener for seeking
 progressBar.addEventListener("click", setCurrentVideoTime);
 
 //add click and drap seekbar function
@@ -67,4 +68,24 @@ const mouseIsDown = false;
 progressBar.addEventListener("mousedown", () => mouseIsDown === true);
 progressBar.addEventListener("mouseup", () => mouseIsDown === false);
 //trigger setCurrentVideoTime function if mouse is pressed down and dragged
-progressBar.addEventListener("mousemove", (e) => mouseIsDown && setCurrentVideoTime);
+progressBar.addEventListener(
+	"mousemove",
+	(e) => mouseIsDown && setCurrentVideoTime
+);
+
+//control video using keyboard
+window.addEventListener("keyup", (e) => {
+	switch (e.code) {
+		case "Space":
+			playPauseVideo();
+			break;
+		case "ArrowLeft":
+			rewindForwardVideo("rewind");
+			break;
+		case "ArrowRight":
+			rewindForwardVideo("forward");
+			break;
+		default:
+			break;
+	}
+});
