@@ -60,3 +60,11 @@ const setCurrentVideoTime = (e) => {
 
 //add eventlistener for seeking 
 progressBar.addEventListener("click", setCurrentVideoTime);
+
+//add click and drap seekbar function
+const mouseIsDown = false;
+
+progressBar.addEventListener("mousedown", () => mouseIsDown === true);
+progressBar.addEventListener("mouseup", () => mouseIsDown === false);
+//trigger setCurrentVideoTime function if mouse is pressed down and dragged
+progressBar.addEventListener("mousemove", (e) => mouseIsDown && setCurrentVideoTime);
