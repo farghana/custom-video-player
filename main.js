@@ -89,3 +89,22 @@ window.addEventListener("keyup", (e) => {
 			break;
 	}
 });
+
+//fullscreen
+const fullScreenBtn = document.querySelector("#fullscreen-button");
+
+const toggleFullscreen = () => {
+  const videoContainer = document.querySelector("#container");
+  const fullScreenIcon = fullScreenBtn.querySelector("i");
+	//check if fullscreen
+	if(document.fullscreenElement) {
+      document.exitFullscreen();
+      fullScreenIcon.textContent = "fullscreen"
+  } else {
+      container.requestFullscreen();
+      fullScreenIcon.textContent = "fullscreen_exit"
+  }
+
+};
+
+fullScreenBtn.addEventListener("click", toggleFullscreen);
