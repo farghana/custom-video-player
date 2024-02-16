@@ -94,17 +94,40 @@ window.addEventListener("keyup", (e) => {
 const fullScreenBtn = document.querySelector("#fullscreen-button");
 
 const toggleFullscreen = () => {
-  const videoContainer = document.querySelector("#container");
-  const fullScreenIcon = fullScreenBtn.querySelector("i");
+	const videoContainer = document.querySelector("#container");
+	const fullScreenIcon = fullScreenBtn.querySelector("i");
 	//check if fullscreen
-	if(document.fullscreenElement) {
-      document.exitFullscreen();
-      fullScreenIcon.textContent = "fullscreen"
-  } else {
-      container.requestFullscreen();
-      fullScreenIcon.textContent = "fullscreen_exit"
-  }
-
+	if (document.fullscreenElement) {
+		document.exitFullscreen();
+		fullScreenIcon.textContent = "fullscreen";
+	} else {
+		container.requestFullscreen();
+		fullScreenIcon.textContent = "fullscreen_exit";
+	}
 };
 
 fullScreenBtn.addEventListener("click", toggleFullscreen);
+
+//video play rate
+const speedBtn = document.getElementById("speed-button");
+
+const setVideoSpeed = () => {
+	//get current speed of video
+	const currentSpeed = video.playbackRate;
+
+	switch (currentSpeed) {
+		case 1:
+			video.playbackRate = 1.5;
+			speedBtn.textContent = "1.5x";
+			break;
+		case 1.5:
+			video.playbackRate = 2;
+			speedBtn.textContent = "2x";
+		default:
+      video.playbackRate = 1;
+      speedBtn.textContent = '1x';
+			break;
+	}
+};
+
+speedBtn.addEventListener("click", setVideoSpeed);

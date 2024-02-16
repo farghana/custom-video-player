@@ -30,5 +30,5 @@
 }
 
 .controls-container{
-  @apply opacity-0 p-5 absolute bottom-0 left-0 w-full transition-opacity duration-300 ease-linear group-hover:opacity-100
+  @apply opacity-50 p-5 absolute bottom-0 left-0 w-full transition-opacity duration-300 ease-linear group-hover:opacity-100
 }
